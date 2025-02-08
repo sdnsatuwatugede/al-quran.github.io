@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Al-Quran Digital</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Amiri&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <h1>Al-Quran Digital</h1>
+        </div>
+        <div class="juz-selector">
+          <select
+            id="juzSelector"
+            title="Pilih Juz"
+            onchange="changeJuz(this.value)"
+          >
+            <option value="" disabled selected>Pilih Juz</option>
+          </select>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="quran-container">
+          <div id="quranContent" class="quran-content">
+            <!-- Quran content will be loaded here -->
+          </div>
+        </div>
+        <div class="navigation">
+          <button id="prevJuz" class="nav-btn" onclick="navigateJuz('prev')">
+            <i class="fas fa-chevron-left"></i> Juz Sebelumnya
+          </button>
+          <button id="nextJuz" class="nav-btn" onclick="navigateJuz('next')">
+            Juz Selanjutnya <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>created ops wtg 1 @ 2025</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
