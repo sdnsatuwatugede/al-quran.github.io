@@ -33,7 +33,7 @@ async function loadJuz(juzNumber) {
         `;
 
     // Build the file path
-    const filePath = `/data/juz${juzNumber}.json`;
+    const filePath = `/al-quran.github.io/data/juz${juzNumber}.json`;
     console.log("Attempting to load:", window.location.origin + filePath);
 
     const response = await fetch(filePath);
@@ -56,7 +56,7 @@ async function loadJuz(juzNumber) {
       errorMessage = `
                 <p>File Juz ${juzNumber} tidak ditemukan. Pastikan:</p>
                 <ul style="text-align: left; margin: 1rem 0;">
-                    <li>File <code>data/juz${juzNumber}.json</code> tersedia</li>
+                    <li>File <code>al-quran.github.io/data/juz${juzNumber}.json</code> tersedia</li>
                     <li>Anda menjalankan website melalui web server (bukan file protocol)</li>
                     <li>Tidak ada masalah jaringan</li>
                 </ul>

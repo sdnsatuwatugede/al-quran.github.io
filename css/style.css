@@ -8,8 +8,15 @@
 }
 
 body {
-  background-image: url("img/pattern.png");
+  background-image: url("../al-quran.github.io/img/pattern.png");
   /* other styles */
+}
+
+.quran-container {
+  background-image: url("../al-quran.github.io/img/pattern.png");
+  background-size: 200px;
+  background-repeat: repeat;
+  background-blend-mode: soft-light;
 }
 
 * {
