@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+.night-sky {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.moon {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  width: 80px;
+  height: 80px;
+  background: #efe4a8;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #ffd700;
+  animation: glow 2s infinite alternate;
+}
+
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  .shooting-star {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #fff;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 6px #fff);
+    animation: shoot 3s linear infinite;
+  }
+
+  .shooting-star::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, #fff, transparent);
+    opacity: 0.6;
+  }
+
+  @keyframes shoot {
+    0% {
+      transform: translate(0, 0) rotate(-45deg);
+      opacity: 1;
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-200px, 200px) rotate(-45deg);
+      opacity: 0;
+    }
+  }
+}
+.content {
+  position: relative;
+  z-index: 1;
+}
+.greeting-text {
+  font-size: 1.2rem;
+  color: #b3b3b3;
+  margin: 15px 0;
+  line-height: 1.6;
+  animation: slideIn 1.5s ease-out 1.2s backwards,
+    fadeIn 2s ease-out 1.2s backwards;
+}
+
+.dua-text {
+  font-size: 1.8rem;
+  color: #ffd700;
+  margin: 20px 0 10px 0;
+  animation: slideIn 1.5s ease-out 1.4s backwards,
+    fadeIn 2s ease-out 1.4s backwards;
+}
+
+.dua-translation {
+  font-size: 1rem;
+  color: #e6e6e6;
+  font-style: italic;
+  animation: slideIn 1.5s ease-out 1.6s backwards,
+    fadeIn 2s ease-out 1.6s backwards;
+}
+
+@media (max-width: 768px) {
+  .greeting-text {
+    font-size: 1rem;
+  }
+  .dua-text {
+    font-size: 1.5rem;
+  }
+  .dua-translation {
+    font-size: 0.9rem;
+  }
+}
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px #ffd700;
+  }
+  to {
+    box-shadow: 0 0 40px #ffd700;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+  .moon {
+    width: 60px;
+    height: 60px;
+  }
+}
+@keyframes slideIn {
+  from {
+    transform: translateY(30px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+footer {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  padding: 10px;
+  font-family: "Arial", sans-serif;
+  letter-spacing: 1px;
+  animation: fadeIn 2s ease-out 1.5s backwards;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+footer:hover {
+  color: #ffd700;
+  transition: color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  footer {
+    font-size: 0.8rem;
+    bottom: 10px;
+  }
+}

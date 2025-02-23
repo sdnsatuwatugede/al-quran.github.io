@@ -1,59 +1,27 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Al-Quran Digital</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Amiri&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/style.css" />
+    <title>Ramadan Kareem</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
-      <nav class="navbar">
-        <div class="logo">
-          <h1>Al-Quran Digital</h1>
-        </div>
-        <div class="juz-selector">
-          <select
-            id="juzSelector"
-            title="Pilih Juz"
-            onchange="changeJuz(this.value)"
-          >
-            <option value="" disabled selected>Pilih Juz</option>
-          </select>
-        </div>
-      </nav>
-    </header>
-
-    <main>
-      <div class="container">
-        <div class="quran-container">
-          <div id="quranContent" class="quran-content">
-            <!-- Quran content will be loaded here -->
-          </div>
-        </div>
-        <div class="navigation">
-          <button id="prevJuz" class="nav-btn" onclick="navigateJuz('prev')">
-            <i class="fas fa-chevron-left"></i> Juz Sebelumnya
-          </button>
-          <button id="nextJuz" class="nav-btn" onclick="navigateJuz('next')">
-            Juz Selanjutnya <i class="fas fa-chevron-right"></i>
-          </button>
-        </div>
+    <div class="container">
+      <div class="night-sky">
+        <div class="moon"></div>
+        <div class="stars"></div>
       </div>
-    </main>
-
-    <footer>
-      <p>created ops wtg 1 @ 2025</p>
-    </footer>
-
-    <script src="js/main.js"></script>
+      <div class="content">
+            <h1>رمضان كريم</h1>
+            <h2>Ramadan Kareem</h2>
+            <p>Selamat menunaikan ibadah puasa Ramadhan 1445 H</p>
+            <p class="greeting-text">Semoga di bulan yang penuh berkah ini, kita dapat meraih taqwa dan mendapatkan ampunan dari Allah SWT</p>
+            <p class="dua-text">تَقَبَّلَ اللَّهُ مِنَّا وَمِنْكُمْ صِيَامَنَا وَصِيَامَكُمْ</p>
+            <p class="dua-translation">Taqabbalallahu minna wa minkum shiyamana wa shiyamakum</p>
+        </div>
+    </div>
+    <footer>created ops 1 watugede</footer>
+    <script src="script.js"></script>
   </body>
 </html>
