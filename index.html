@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Add audio element for background music -->
+    <audio autoplay loop id="bgMusic">
+      <source src="assets/selamat datang tamu agung.mp3" type="audio/mp3" />
+      Your browser does not support the audio element.
+    </audio>
+    <!-- Add music control button -->
+    <button id="musicToggle" class="music-control">
+      <span class="music-icon">🎵</span>
+    </button>
     <div class="container">
       <div class="night-sky">
         <div class="moon"></div>

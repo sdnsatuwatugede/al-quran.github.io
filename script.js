@@ -37,7 +37,18 @@ function createShootingStars() {
     }, 3000);
   }, 4000); // Create new shooting star every 4 seconds
 }
+const bgMusic = document.getElementById("bgMusic");
+const musicToggle = document.getElementById("musicToggle");
 
+musicToggle.addEventListener("click", () => {
+  if (bgMusic.paused) {
+    bgMusic.play();
+    musicToggle.classList.add("playing");
+  } else {
+    bgMusic.pause();
+    musicToggle.classList.remove("playing");
+  }
+});
 // Add this to your existing DOMContentLoaded event
 document.addEventListener("DOMContentLoaded", () => {
   createStars();
