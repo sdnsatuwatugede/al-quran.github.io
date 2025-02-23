@@ -49,11 +49,34 @@ musicToggle.addEventListener("click", () => {
     musicToggle.classList.remove("playing");
   }
 });
-// Add this to your existing DOMContentLoaded event
+
 document.addEventListener("DOMContentLoaded", () => {
   createStars();
   createShootingStars();
+
+  // Auto-play music with error handling
+  bgMusic.play().catch((error) => {
+    console.log("Auto-play prevented by browser:", error);
+    // Add visual indicator that music needs user interaction to play
+    musicToggle.classList.add("needs-interaction");
+  });
+
+  // Update music toggle button state
+  if (!bgMusic.paused) {
+    musicToggle.classList.add("playing");
+  }
 });
+
+document.addEventListener(
+  "click",
+  function () {
+    if (bgMusic.muted) {
+      bgMusic.muted = false;
+      musicToggle.classList.add("playing");
+    }
+  },
+  { once: true }
+); // Event listener will only trigger once
 
 // Add twinkling animation to CSS
 const style = document.createElement("style");
