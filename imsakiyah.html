@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jadwal Imsakiyah Ramadhan 1445 H</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background: linear-gradient(135deg, #1a1a2e, #16213e);
+        color: #fff;
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        text-align: center;
+        color: #ffd700;
+        margin-bottom: 30px;
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+      }
+
+      .table-container {
+        overflow-x: auto;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      th,
+      td {
+        padding: 15px;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      th {
+        background: rgba(255, 215, 0, 0.2);
+        color: #ffd700;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      tr:hover {
+        background: rgba(255, 215, 0, 0.1);
+      }
+
+      @media (max-width: 768px) {
+        th,
+        td {
+          padding: 10px;
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Jadwal Imsakiyah Ramadhan 1445 H</h1>
+      <div class="table-container">
+        <table id="imsakiyahTable">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Tanggal</th>
+              <th>Imsak</th>
+              <th>Subuh</th>
+              <th>Dzuhur</th>
+              <th>Ashar</th>
+              <th>Maghrib</th>
+              <th>Isya</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script>
+      const imsakiyahData = [
+        {
+          No: "1",
+          Tanggal: "1 Ramadhan",
+          Imsak: "04:08",
+          Subuh: "04:18",
+          Dzuhur: "11:46",
+          Ashar: "14:47",
+          Maghrib: "17:53",
+          Isya: "19:02",
+        },
+        {
+          No: "2",
+          Tanggal: "2 Ramadhan",
+          Imsak: "04:08",
+          Subuh: "04:18",
+          Dzuhur: "11:45",
+          Ashar: "14:48",
+          Maghrib: "17:52",
+          Isya: "19:02",
+        },
+        {
+          No: "3",
+          Tanggal: "3 Ramadhan",
+          Imsak: "04:09",
+          Subuh: "04:19",
+          Dzuhur: "11:45",
+          Ashar: "14:48",
+          Maghrib: "17:52",
+          Isya: "19:01",
+        },
+        {
+          No: "4",
+          Tanggal: "4 Ramadhan",
+          Imsak: "04:09",
+          Subuh: "04:19",
+          Dzuhur: "11:45",
+          Ashar: "14:49",
+          Maghrib: "17:52",
+          Isya: "19:01",
+        },
+        {
+          No: "5",
+          Tanggal: "5 Ramadhan",
+          Imsak: "04:09",
+          Subuh: "04:19",
+          Dzuhur: "11:45",
+          Ashar: "14:49",
+          Maghrib: "17:51",
+          Isya: "19:00",
+        },
+        {
+          No: "6",
+          Tanggal: "6 Ramadhan",
+          Imsak: "04:09",
+          Subuh: "04:19",
+          Dzuhur: "11:44",
+          Ashar: "14:49",
+          Maghrib: "17:51",
+          Isya: "19:00",
+        },
+        {
+          No: "7",
+          Tanggal: "7 Ramadhan",
+          Imsak: "04:09",
+          Subuh: "04:19",
+          Dzuhur: "11:44",
+          Ashar: "14:50",
+          Maghrib: "17:50",
+          Isya: "18:59",
+        },
+        {
+          No: "8",
+          Tanggal: "8 Ramadhan",
+          Imsak: "04:09",
+          Subuh: "04:19",
+          Dzuhur: "11:44",
+          Ashar: "14:50",
+          Maghrib: "17:50",
+          Isya: "18:59",
+        },
+        {
+          No: "9",
+          Tanggal: "9 Ramadhan",
+          Imsak: "04:09",
+          Subuh: "04:19",
+          Dzuhur: "11:44",
+          Ashar: "14:50",
+          Maghrib: "17:49",
+          Isya: "18:58",
+        },
+        {
+          No: "10",
+          Tanggal: "10 Ramadhan",
+          Imsak: "04:09",
+          Subuh: "04:19",
+          Dzuhur: "11:44",
+          Ashar: "14:51",
+          Maghrib: "17:49",
+          Isya: "18:58",
+        },
+        {
+          No: "11",
+          Tanggal: "11 Ramadhan",
+          Imsak: "04:09",
+          Subuh: "04:19",
+          Dzuhur: "11:43",
+          Ashar: "14:51",
+          Maghrib: "17:48",
+          Isya: "18:57",
+        },
+        {
+          No: "12",
+          Tanggal: "12 Ramadhan",
+          Imsak: "04:09",
+          Subuh: "04:19",
+          Dzuhur: "11:43",
+          Ashar: "14:51",
+          Maghrib: "17:48",
+          Isya: "18:57",
+        },
+        {
+          No: "13",
+          Tanggal: "13 Ramadhan",
+          Imsak: "04:09",
+          Subuh: "04:19",
+          Dzuhur: "11:43",
+          Ashar: "14:51",
+          Maghrib: "17:47",
+          Isya: "18:56",
+        },
+        {
+          No: "14",
+          Tanggal: "14 Ramadhan",
+          Imsak: "04:09",
+          Subuh: "04:19",
+          Dzuhur: "11:42",
+          Ashar: "14:52",
+          Maghrib: "17:47",
+          Isya: "18:56",
+        },
+        {
+          No: "15",
+          Tanggal: "15 Ramadhan",
+          Imsak: "04:09",
+          Subuh: "04:19",
+          Dzuhur: "11:42",
+          Ashar: "14:52",
+          Maghrib: "17:46",
+          Isya: "18:55",
+        },
+        {
+          No: "16",
+          Tanggal: "16 Ramadhan",
+          Imsak: "04:09",
+          Subuh: "04:19",
+          Dzuhur: "11:42",
+          Ashar: "14:52",
+          Maghrib: "17:46",
+          Isya: "18:54",
+        },
+        {
+          No: "17",
+          Tanggal: "17 Ramadhan",
+          Imsak: "04:09",
+          Subuh: "04:19",
+          Dzuhur: "11:42",
+          Ashar: "14:52",
+          Maghrib: "17:45",
+          Isya: "18:54",
+        },
+        {
+          No: "18",
+          Tanggal: "18 Ramadhan",
+          Imsak: "04:09",
+          Subuh: "04:19",
+          Dzuhur: "11:41",
+          Ashar: "14:52",
+          Maghrib: "17:45",
+          Isya: "18:53",
+        },
+        {
+          No: "19",
+          Tanggal: "19 Ramadhan",
+          Imsak: "04:09",
+          Subuh: "04:19",
+          Dzuhur: "11:41",
+          Ashar: "14:53",
+          Maghrib: "17:44",
+          Isya: "18:53",
+        },
+        {
+          No: "20",
+          Tanggal: "20 Ramadhan",
+          Imsak: "04:09",
+          Subuh: "04:19",
+          Dzuhur: "11:41",
+          Ashar: "14:53",
+          Maghrib: "17:44",
+          Isya: "18:52",
+        },
+        {
+          No: "21",
+          Tanggal: "21 Ramadhan",
+          Imsak: "04:09",
+          Subuh: "04:19",
+          Dzuhur: "11:41",
+          Ashar: "14:53",
+          Maghrib: "17:44",
+          Isya: "18:52",
+        },
+        {
+          No: "22",
+          Tanggal: "22 Ramadhan",
+          Imsak: "04:09",
+          Subuh: "04:19",
+          Dzuhur: "11:40",
+          Ashar: "14:53",
+          Maghrib: "17:43",
+          Isya: "18:52",
+        },
+        {
+          No: "23",
+          Tanggal: "23 Ramadhan",
+          Imsak: "04:09",
+          Subuh: "04:19",
+          Dzuhur: "11:40",
+          Ashar: "14:53",
+          Maghrib: "17:42",
+          Isya: "18:51",
+        },
+        {
+          No: "24",
+          Tanggal: "24 Ramadhan",
+          Imsak: "04:09",
+          Subuh: "04:19",
+          Dzuhur: "11:40",
+          Ashar: "14:53",
+          Maghrib: "17:42",
+          Isya: "18:50",
+        },
+        {
+          No: "25",
+          Tanggal: "25 Ramadhan",
+          Imsak: "04:08",
+          Subuh: "04:18",
+          Dzuhur: "11:39",
+          Ashar: "14:53",
+          Maghrib: "17:41",
+          Isya: "18:50",
+        },
+        {
+          No: "26",
+          Tanggal: "26 Ramadhan",
+          Imsak: "04:08",
+          Subuh: "04:18",
+          Dzuhur: "11:39",
+          Ashar: "14:53",
+          Maghrib: "17:41",
+          Isya: "18:49",
+        },
+        {
+          No: "27",
+          Tanggal: "27 Ramadhan",
+          Imsak: "04:08",
+          Subuh: "04:18",
+          Dzuhur: "11:39",
+          Ashar: "14:53",
+          Maghrib: "17:40",
+          Isya: "18:49",
+        },
+        {
+          No: "28",
+          Tanggal: "28 Ramadhan",
+          Imsak: "04:08",
+          Subuh: "04:18",
+          Dzuhur: "11:38",
+          Ashar: "14:53",
+          Maghrib: "17:39",
+          Isya: "18:48",
+        },
+        {
+          No: "29",
+          Tanggal: "29 Ramadhan",
+          Imsak: "04:08",
+          Subuh: "04:18",
+          Dzuhur: "11:38",
+          Ashar: "14:53",
+          Maghrib: "17:39",
+          Isya: "18:48",
+        },
+        {
+          No: "30",
+          Tanggal: "30 Ramadhan",
+          Imsak: "04:08",
+          Subuh: "04:18",
+          Dzuhur: "11:38",
+          Ashar: "14:53",
+          Maghrib: "17:38",
+          Isya: "18:47",
+        },
+      ];
+
+      function populateTable() {
+        const tableBody = document.querySelector("#imsakiyahTable tbody");
+        imsakiyahData.forEach((row) => {
+          const tr = document.createElement("tr");
+          tr.innerHTML = `
+                    <td>${row.No}</td>
+                    <td>${row.Tanggal}</td>
+                    <td>${row.Imsak}</td>
+                    <td>${row.Subuh}</td>
+                    <td>${row.Dzuhur}</td>
+                    <td>${row.Ashar}</td>
+                    <td>${row.Maghrib}</td>
+                    <td>${row.Isya}</td>
+                `;
+          tableBody.appendChild(tr);
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", populateTable);
+    </script>
+  </body>
+</html>
